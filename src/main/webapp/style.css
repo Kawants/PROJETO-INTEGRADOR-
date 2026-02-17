@@ -1,0 +1,177 @@
+/* --- Variáveis e Reset --- */
+:root {
+    --primary: #c5a059;
+    --dark: #121212;
+    --dark-light: #1e1e1e;
+    --text-light: #f4f4f4;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Cabeçalho --- */
+header {
+    background: rgba(18, 18, 18, 0.95);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    transition: var(--transition);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li { margin-left: 2rem; }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+nav ul li a:hover { color: var(--primary); }
+
+/* --- Hero Section --- */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1470') center/cover;
+    padding: 0 5%;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-main {
+    background: var(--primary);
+    color: var(--dark);
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    margin-top: 2rem;
+    transition: var(--transition);
+}
+
+.btn-main:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+/* --- Seções e Galeria --- */
+.section { padding: 80px 10%; }
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 50px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 300px;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* --- Formulário --- */
+.booking-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--dark-light);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.form-group { margin-bottom: 20px; }
+
+label { display: block; margin-bottom: 8px; font-size: 0.9rem; }
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    border: none;
+    color: var(--dark);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* --- Rodapé --- */
+footer {
+    background: #0a0a0a;
+    padding: 50px 10% 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+}
+
+.social-links { margin-bottom: 20px; }
+.social-links a { color: var(--primary); margin: 0 10px; text-decoration: none; }
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Menu hamburguer seria ideal aqui em um próximo passo */
+    .hero h1 { font-size: 2.2rem; }
+}
